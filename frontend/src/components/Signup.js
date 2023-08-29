@@ -47,7 +47,7 @@ const Signup = () => {
       data.append("upload_preset", "chat_app");
 
       return axios
-        .post(`https://api.cloudinary.com/v1_1/dqclqq2jy/image/upload/`, data, {
+        .post(`https://api.cloudinary.com/v1_1/djmeoiigc/image/upload/`, data, {
           onUploadProgress: (ProgressEvent) => {},
         })
          //.then((res) => res.json())

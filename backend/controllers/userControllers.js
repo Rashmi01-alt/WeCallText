@@ -1,7 +1,9 @@
 
 const User =require("../models/user")
 const  generateToken = require("./generateToken")
-const registerUser = async(req,res) =>{
+
+
+const registerUser = async (req, res) => {
 
     const {name ,email,password ,pic}= req.body;
     
@@ -60,9 +62,7 @@ const authUser = async (req, res) => {
 };
 
 const allusers = async (req,res)=>{
-  const keyword = req.query.search
-  
-  ? {
+  const keyword = req.query.search? {
       $or :[
               {name:{$regex : req.query.search ,$options :"i"}},
               {email:{$regex : req.query.search ,$options :"i"}}
