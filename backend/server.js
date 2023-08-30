@@ -2,7 +2,8 @@ const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
 const { dbconnect } = require("./config/database");
-const {userRoute} = require("./routes/userRoute");
+const { userRoute } = require("./routes/userRoute");
+const {chatRoutes} = require("./routes/chatRoutes")
 
 const { notFound, errorHandler } = require("./middlewares/errormiddleware");
 
@@ -17,7 +18,7 @@ app.use("/api/chat",chatRoutes );
 app.use(notFound);
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
 
 dbconnect();
 
