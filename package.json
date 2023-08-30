@@ -8,7 +8,7 @@
     "dev": "nodemon backend/server.js"
   },
   "keywords": [],
-  "author": "Tanmay ",
+  "author": "Rashmi ",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
