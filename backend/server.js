@@ -1,11 +1,12 @@
 const express = require("express");
-const app = express();
+
 const dotenv = require("dotenv");
 const { dbconnect } = require("./config/database");
 const { userRoute } = require("./routes/userRoute");
 const {chatRoutes} = require("./routes/chatRoutes")
 
 const { notFound, errorHandler } = require("./middlewares/errormiddleware");
+const app = express();
 
 app.use(express.json());
 dotenv.config();

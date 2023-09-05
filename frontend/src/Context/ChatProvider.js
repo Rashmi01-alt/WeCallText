@@ -8,11 +8,11 @@ const ChatProvider = ({ children }) => {
     let navigate = useNavigate();
     //fetching local storage in stringify form and then parsing it
     
-    useEffect(() => {
-        const userInfo = JSON.parse(localStorage.getItem("userInfo"));
-        setUser(userInfo);
-        if (!userInfo) { navigate("/")}
-    },[navigate])
+    //  useEffect(() => {
+    //     const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+    //     setUser(userInfo);
+    //     if (!userInfo) { navigate("/chats")}
+    //  },[navigate])
 
     return <ChatContext.Provider value={{user,setUser}}>{children}</ChatContext.Provider>
 };

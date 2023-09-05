@@ -6,12 +6,12 @@ import { useNavigate } from "react-router-dom";
 import { useEffect} from "react";
 
 const Homepage = () => {
-  let navigate = useNavigate();
-  useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("userInfo"));
-    if (user)
-      navigate("/chats");
-  },[navigate]);
+  // let navigate = useNavigate();
+  // useEffect(() => {
+  //   const user = JSON.parse(localStorage.getItem("userInfo"));
+  //   if (user)
+  //     navigate("/chats");
+  // },[navigate]);
   return (
     <Container maxW='xl' centerContent >
       <Box
