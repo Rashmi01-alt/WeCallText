@@ -43,7 +43,7 @@ const Login = () => {
        };
 
        const { data } = await axios.post(
-         "api/v1/authUser",
+         "api/user/authUser",
          { email, password },
          config
        );
@@ -58,7 +58,7 @@ const Login = () => {
        //setUser(data);
        localStorage.setItem("userInfo", JSON.stringify(data));
        setLoading(false);
-       navigate("/chat");
+       navigate("/chats");
      } catch (error) {
        toast({
          title: "Error Occured!",

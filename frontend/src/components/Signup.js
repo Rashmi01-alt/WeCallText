@@ -25,7 +25,7 @@ const Signup = () => {
   const [picLoading, setPicLoading] = useState(false);
 
   const toast = useToast();
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const postDetails = async (pics) => {
     setPicLoading(true);
@@ -50,7 +50,7 @@ const Signup = () => {
         .post(`https://api.cloudinary.com/v1_1/djmeoiigc/image/upload/`, data, {
           onUploadProgress: (ProgressEvent) => {},
         })
-         //.then((res) => res.json())
+         .then((res) => res.json())
          
         .then(({data}) => {
           
@@ -108,7 +108,7 @@ const Signup = () => {
         },
       };
       const { data } = await axios.post(
-        "/api/v1/registerUser",
+        "/api/user/registerUser",
         {
           name,
           email,
@@ -127,7 +127,7 @@ const Signup = () => {
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
       setPicLoading(false);
-      navigate("/chat");
+      navigate("/chats");
     } catch (error) {
       toast({
         title: "Error Occured!",
