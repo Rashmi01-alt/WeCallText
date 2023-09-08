@@ -50,7 +50,7 @@ const Signup = () => {
         .post(`https://api.cloudinary.com/v1_1/djmeoiigc/image/upload/`, data, {
           onUploadProgress: (ProgressEvent) => {},
         })
-         .then((res) => res.json())
+         //.then((res) => res.json())
          
         .then(({data}) => {
           

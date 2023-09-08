@@ -62,7 +62,7 @@ const fetchChats = (async (req, res) => {
                 res.status(200).send(results);
             });
     } catch (error) {
-        res.statys(400);
+        res.status(400);
         throw new Error(error.message);
     }
   })
