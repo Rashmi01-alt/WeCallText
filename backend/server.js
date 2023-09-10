@@ -66,15 +66,20 @@ io.on("connection", (socket) => {
    
    
    
-   // logic such tht in group chat we dont recieve back our own messages
+    // logic such tht in group chat we dont recieve back our own messages
     chat.users.forEach((user) => {
-      if(user._id == newMessageReceived.sender._id)
+      if (user._id == newMessageReceived.sender._id)
         return;
       socket.in(user._id).emit("message received", newMessageReceived);
       
 
-    })
+    });
     
     
-   } )
+  });
+
+  socket.off("setup", () => {
+    console.log("USER DISCONNECTED");
+    socket.leave(userData._id);
+  });
   });

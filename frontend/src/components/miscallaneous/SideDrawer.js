@@ -16,6 +16,9 @@ import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import ChatLoading from '../ChatLoading';
 import UserListItem from '../userAvatar/UserListItem';
+import { getSender } from '../../config/ChatLogics';
+import { Effect } from 'react-notification-badge';
+import NotificationBadge from 'react-notification-badge';
 
 
 const SideDrawer = () => {
@@ -123,9 +126,25 @@ const toast= useToast();
       </Text>
       <div>
         <Menu>
-          <MenuButton p={1}>
+            <MenuButton p={1}>
+              <NotificationBadge
+                count={notification.length}
+                effect={Effect.SCALE } />
             <BellIcon fontSize='2xl' m={1}></BellIcon>
-          </MenuButton>
+            </MenuButton>
+            <MenuList pl={2}>
+              {!notification.length && "No new messages"}
+              {notification.map((notif) => (
+                <MenuItem key={notif._id} onClick={() => {
+                  setSelectedChat(notif.chat)
+                  setNotification(notification.filter((n)=>n!==notif))
+                }}>
+                  {notif.chat.isGroupChat ? `New message in ${notif.chat.chatName}` :
+                    `New message from ${getSender(user,notif.chat.users)}`}
+                </MenuItem>
+              )
+              )}
+            </MenuList>
         </Menu>
         <Menu>
           <MenuButton
