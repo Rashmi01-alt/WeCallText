@@ -117,7 +117,7 @@ const toast= useToast();
         <Button variant='ghost ' onClick={onOpen}>
             < Search2Icon m={2} />
             
-          <Text d={{ base: "none", md: "flex" }} px='4px'>
+          <Text display={{ base: "none", md: "flex" }} px='4px'>
             Search User </Text>
         </Button>
       </Tooltip>
@@ -189,7 +189,7 @@ const toast= useToast();
                 />
               ))
             )}
-            {LoadingChat && <Spinner ml="auto" d="flex" />}
+            {LoadingChat && <Spinner ml="auto" display="flex" />}
         </DrawerBody>
         </DrawerContent>
        
