@@ -22,10 +22,10 @@ if(userexist)
 }
 
 const user = await User.create({
-    name,
-    email,
-    password,
-    pic,
+  name,
+  email,
+  password,
+  pic,
 });
 
 if(user){
